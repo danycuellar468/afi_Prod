@@ -1,4 +1,4 @@
-import tailwindcss from '@tailwindcss/vite'
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
 
@@ -7,7 +7,7 @@ export default defineConfig({
   test: {
     environment: "jsdom",
     globals: true,
-    setupFiles: "./src/setupTests.ts"
+    setupFiles: "./src/setupTests.ts",
   },
-  base: "/afi_Prod",
+  base: process.env.VITE_BASE_PATH || "/",
 });
