@@ -7,19 +7,18 @@ interface ButtonProps {
 }
 
 export default function Button({ variant, children, onClick, className, disabled }: ButtonProps) {
-
     function getStyle() {
         switch (variant) {
             case "primary":
-                return "text-text bg-primary border-transparent enabled:active:bg-primary-dark";
+                return "text-white bg-slate-900 border-slate-900 enabled:hover:bg-slate-800 enabled:active:bg-slate-950";
             case "secondary":
-                return "text-secondary border-secondary enabled:active:bg-primary-dark enabled:active:text-text enabled:active:border-transparent enabled:hover:bg-primary enabled:hover:border-transparent enabled:hover:text-text";
+                return "text-slate-900 border-slate-900 bg-white enabled:hover:bg-slate-900 enabled:hover:text-white enabled:active:bg-slate-950";
             case "destructive":
                 return "text-white bg-destructive border-transparent enabled:active:bg-destructive-dark";
             case "success":
-                return "text-white bg-success border-transparent enabled:active:bg-success-dark";
+                return "text-white bg-emerald-600 border-emerald-600 enabled:hover:bg-emerald-500 enabled:active:bg-emerald-700";
             case "gold":
-                return "font-anton text-white border-secondary bg-secondary enabled:hover:bg-primary enabled:hover:text-white enabled:hover:border-transparent enabled:active:bg-primary-dark";
+                return "font-anton text-slate-900 border-amber-400 bg-amber-300 enabled:hover:bg-amber-400 enabled:hover:border-amber-400 enabled:active:bg-amber-500";
             default:
                 return "";
         }
@@ -29,7 +28,7 @@ export default function Button({ variant, children, onClick, className, disabled
         <button
             onClick={onClick}
             disabled={disabled}
-            className={`px-4 py-2 rounded-2xl font-medium border-4 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${getStyle()} ${className ?? ""}`}
+            className={`px-4 py-2 rounded-2xl font-medium border-4 shadow-sm transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${getStyle()} ${className ?? ""}`}
         >
             {children}
         </button>
