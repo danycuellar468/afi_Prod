@@ -9,5 +9,5 @@ export default defineConfig({
     globals: true,
     setupFiles: "./src/setupTests.ts"
   },
-  base: "/",
+  base: "/afi_Prod",
 });
